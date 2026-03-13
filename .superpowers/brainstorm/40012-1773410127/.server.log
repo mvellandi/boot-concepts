@@ -1,0 +1,5 @@
+{"type":"server-started","port":65480,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:65480","screen_dir":"/Users/mvellandi/PROJECTS/clients/boot/.superpowers/brainstorm/40012-1773410127"}
+{"type":"screen-added","file":"/Users/mvellandi/PROJECTS/clients/boot/.superpowers/brainstorm/40012-1773410127/testimonial-card-mockup.html"}
+{"type":"screen-added","file":"/Users/mvellandi/PROJECTS/clients/boot/.superpowers/brainstorm/40012-1773410127/testimonial-card-v2.html"}
+{"type":"screen-added","file":"/Users/mvellandi/PROJECTS/clients/boot/.superpowers/brainstorm/40012-1773410127/testimonial-card-v3.html"}
+{"type":"server-stopped","reason":"idle timeout"}

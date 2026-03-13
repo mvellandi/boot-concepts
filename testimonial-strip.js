@@ -71,31 +71,31 @@ class TestimonialStrip extends HTMLElement {
     `;
 
     // Gradient fade overlays on left and right edges
-    if (!document.querySelector("style[data-testimonial-gradients]")) {
-      const style = document.createElement("style");
-      style.dataset.testimonialGradients = "1";
-      style.textContent = `
-        testimonial-strip::before,
-        testimonial-strip::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 80px;
-          z-index: 5;
-          pointer-events: none;
-        }
-        testimonial-strip::before {
-          left: 0;
-          background: linear-gradient(to right, #21232f 0%, transparent 100%);
-        }
-        testimonial-strip::after {
-          right: 0;
-          background: linear-gradient(to left, #21232f 0%, transparent 100%);
-        }
-      `;
-      document.head.appendChild(style);
-    }
+    // if (!document.querySelector("style[data-testimonial-gradients]")) {
+    //   const style = document.createElement("style");
+    //   style.dataset.testimonialGradients = "1";
+    //   style.textContent = `
+    //     testimonial-strip::before,
+    //     testimonial-strip::after {
+    //       content: '';
+    //       position: absolute;
+    //       top: 0;
+    //       bottom: 0;
+    //       width: 80px;
+    //       z-index: 5;
+    //       pointer-events: none;
+    //     }
+    //     testimonial-strip::before {
+    //       left: 0;
+    //       background: linear-gradient(to right, #21232f 0%, transparent 100%);
+    //     }
+    //     testimonial-strip::after {
+    //       right: 0;
+    //       background: linear-gradient(to left, #21232f 0%, transparent 100%);
+    //     }
+    //   `;
+    //   document.head.appendChild(style);
+    // }
 
     // Build the scrollable track
     const track = document.createElement("div");
