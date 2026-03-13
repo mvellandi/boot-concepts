@@ -66,6 +66,8 @@ class TestimonialStrip extends HTMLElement {
     this.style.cssText = `
       display: block;
       position: relative;
+      padding: 0 16px;
+      box-sizing: border-box;
     `;
 
     // Gradient fade overlays on left and right edges
