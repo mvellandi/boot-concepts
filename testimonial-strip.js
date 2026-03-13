@@ -66,7 +66,7 @@ class TestimonialStrip extends HTMLElement {
     this.style.cssText = `
       display: block;
       position: relative;
-      padding: 0 16px;
+      padding: 0 32px;
       box-sizing: border-box;
     `;
 
@@ -106,7 +106,7 @@ class TestimonialStrip extends HTMLElement {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
-      padding: 8px 0 16px 44px;
+      padding: 8px 0 16px 60px;
       -webkit-overflow-scrolling: touch;
       cursor: grab;
     `;
