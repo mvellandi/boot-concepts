@@ -68,6 +68,33 @@ class TestimonialStrip extends HTMLElement {
       position: relative;
     `;
 
+    // Gradient fade overlays on left and right edges
+    if (!document.querySelector("style[data-testimonial-gradients]")) {
+      const style = document.createElement("style");
+      style.dataset.testimonialGradients = "1";
+      style.textContent = `
+        testimonial-strip::before,
+        testimonial-strip::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 52px;
+          z-index: 5;
+          pointer-events: none;
+        }
+        testimonial-strip::before {
+          left: 0;
+          background: linear-gradient(to right, #121620 0%, transparent 100%);
+        }
+        testimonial-strip::after {
+          right: 0;
+          background: linear-gradient(to left, #121620 0%, transparent 100%);
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     // Build the scrollable track
     const track = document.createElement("div");
     track.dataset.track = "1";
@@ -77,7 +104,7 @@ class TestimonialStrip extends HTMLElement {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
-      padding: 8px 0 16px;
+      padding: 8px 0 16px 44px;
       -webkit-overflow-scrolling: touch;
       cursor: grab;
     `;
