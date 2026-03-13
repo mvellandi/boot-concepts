@@ -1,7 +1,7 @@
 // Inject Arcuata font once
-if (!document.querySelector('style[data-arcuata]')) {
-  const style = document.createElement('style');
-  style.dataset.arcuata = '1';
+if (!document.querySelector("style[data-arcuata]")) {
+  const style = document.createElement("style");
+  style.dataset.arcuata = "1";
   style.textContent = `
     @font-face {
       font-family: 'Arcuata';
@@ -21,10 +21,10 @@ if (!document.querySelector('style[data-arcuata]')) {
 
 class TestimonialCard extends HTMLElement {
   connectedCallback() {
-    const avatar = this.getAttribute('avatar') || '';
-    const org = this.getAttribute('org') || '';
-    const person = this.getAttribute('person') || '';
-    const quote = this.getAttribute('quote') || '';
+    const avatar = this.getAttribute("avatar") || "";
+    const org = this.getAttribute("org") || "";
+    const person = this.getAttribute("person") || "";
+    const quote = this.getAttribute("quote") || "";
 
     const avatarContent = avatar
       ? `<img src="${avatar}" alt="${org}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;">`
@@ -51,16 +51,27 @@ class TestimonialCard extends HTMLElement {
           <div style="font-size:13px;color:#919dab;margin-top:3px;">${person}</div>
         </div>
       </div>
-      <p style="font-family:'Arcuata',Georgia,serif;font-size:14px;color:#ffffff;line-height:1.65;margin:0;">${quote}</p>
+      <p style="font-family:'Arcuata',Georgia,serif;font-size:16px;color:#ffffff;line-height:1.65;margin:0;">${quote}</p>
     `;
   }
 }
 
-customElements.define('testimonial-card', TestimonialCard);
+customElements.define("testimonial-card", TestimonialCard);
 
 class TestimonialStrip extends HTMLElement {
   connectedCallback() {
+    // Wrap the slotted cards in a scrollable track + arrow buttons
+    const cards = Array.from(this.children);
+
     this.style.cssText = `
+      display: block;
+      position: relative;
+    `;
+
+    // Build the scrollable track
+    const track = document.createElement("div");
+    track.dataset.track = "1";
+    track.style.cssText = `
       display: flex;
       gap: 16px;
       overflow-x: auto;
@@ -68,16 +79,81 @@ class TestimonialStrip extends HTMLElement {
       scrollbar-width: none;
       padding: 8px 0 16px;
       -webkit-overflow-scrolling: touch;
+      cursor: grab;
     `;
+    cards.forEach((card) => { track.appendChild(card); });
+    this.appendChild(track);
 
-    // Hide webkit scrollbar via a one-time injected style tag
-    if (!document.querySelector('style[data-testimonial-strip]')) {
-      const style = document.createElement('style');
-      style.dataset.testimonialStrip = '1';
-      style.textContent = 'testimonial-strip::-webkit-scrollbar { display: none; }';
+    // Hide webkit scrollbar
+    if (!document.querySelector("style[data-testimonial-strip]")) {
+      const style = document.createElement("style");
+      style.dataset.testimonialStrip = "1";
+      style.textContent = `
+        [data-track]::-webkit-scrollbar { display: none; }
+        [data-track].dragging { cursor: grabbing; user-select: none; }
+      `;
       document.head.appendChild(style);
     }
+
+    // Arrow buttons
+    const btnStyle = `
+      position: absolute;
+      top: 50%;
+      transform: translateY(-60%);
+      background: rgba(32,35,48,0.85);
+      border: 1px solid #e5ae3c;
+      color: #e5ae3c;
+      width: 36px;
+      height: 36px;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      line-height: 1;
+    `;
+
+    const prev = document.createElement("button");
+    prev.innerHTML = "&#8249;";
+    prev.setAttribute("aria-label", "Previous");
+    prev.style.cssText = `${btnStyle}left: 0;`;
+
+    const next = document.createElement("button");
+    next.innerHTML = "&#8250;";
+    next.setAttribute("aria-label", "Next");
+    next.style.cssText = `${btnStyle}right: 0;`;
+
+    const scrollBy = (dir) => {
+      const cardWidth = track.querySelector("testimonial-card")?.offsetWidth + 16 || 316;
+      track.scrollBy({ left: dir * cardWidth, behavior: "smooth" });
+    };
+
+    prev.addEventListener("click", () => scrollBy(-1));
+    next.addEventListener("click", () => scrollBy(1));
+
+    this.appendChild(prev);
+    this.appendChild(next);
+
+    // Drag to scroll
+    let isDown = false, startX, scrollLeft;
+
+    track.addEventListener("mousedown", (e) => {
+      isDown = true;
+      track.classList.add("dragging");
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+    track.addEventListener("mouseleave", () => { isDown = false; track.classList.remove("dragging"); });
+    track.addEventListener("mouseup", () => { isDown = false; track.classList.remove("dragging"); });
+    track.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX);
+    });
   }
 }
 
-customElements.define('testimonial-strip', TestimonialStrip);
+customElements.define("testimonial-strip", TestimonialStrip);
