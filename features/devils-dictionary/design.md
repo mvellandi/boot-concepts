@@ -111,14 +111,16 @@ Templates look up category metadata from `categories.js` at build time. The `cat
 
 | URL | Description |
 |---|---|
-| `heyboot.net/devils-dictionary/` | Home — random entry displayed on load |
+| `heyboot.net/devils-dictionary/` | Home — redirects to a random entry page |
 | `heyboot.net/devils-dictionary/entries/[slug]/` | Single entry page |
 | `heyboot.net/devils-dictionary/gallery/` | Card grid, all entries |
 | `heyboot.net/devils-dictionary/cards/[slug].png` | Pre-generated card image |
 
 ### Home Page
 
-Displays a random entry on load. A client-side JS script (`random.js`) selects a random slug from a JSON list of all slugs (injected at build time by 11ty as a global data variable) and **redirects to that entry's page**. The home page itself has static OG tags pointing to a default/featured entry card. An "Another one" button on each entry page triggers another random redirect via `random.js`. A "Browse all" link goes to the gallery.
+Immediately redirects to a random entry on load. A client-side JS script (`random.js`) selects a random slug from a JSON array of all slugs and redirects to that entry's page. The slug list is injected into the home page template at build time as an inline JS variable (e.g., `const SLUGS = ["callback-hell", "yak-shaving", ...]`) — no separate data file or fetch required. The home page itself has static OG tags pointing to a default/featured entry card. An "Another one" button on each entry page triggers another random redirect via `random.js`. A "Browse all" link goes to the gallery.
+
+**Note:** Card PNGs are not generated during `npm run dev`. Run `npm run cards` once before starting the dev server if card images are needed locally (e.g., to test OG tags or card download links).
 
 ### Entry Page
 
