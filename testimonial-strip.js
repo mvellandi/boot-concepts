@@ -1,10 +1,22 @@
 // Inject Arcuata font once
-if (!document.querySelector('link[data-arcuata]')) {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'https://fonts.cdnfonts.com/css/arcuata';
-  link.dataset.arcuata = '1';
-  document.head.appendChild(link);
+if (!document.querySelector('style[data-arcuata]')) {
+  const style = document.createElement('style');
+  style.dataset.arcuata = '1';
+  style.textContent = `
+    @font-face {
+      font-family: 'Arcuata';
+      src: url('./arcuata/Arcuata-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Arcuata';
+      src: url('./arcuata/Arcuata-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 class TestimonialCard extends HTMLElement {
