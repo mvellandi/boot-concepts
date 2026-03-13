@@ -5,13 +5,13 @@ if (!document.querySelector("style[data-arcuata]")) {
   style.textContent = `
     @font-face {
       font-family: 'Arcuata';
-      src: url('./arcuata/Arcuata-Regular.woff2') format('woff2');
+      src: url('./assets/fonts/Arcuata-Regular.woff2') format('woff2');
       font-weight: 400;
       font-style: normal;
     }
     @font-face {
       font-family: 'Arcuata';
-      src: url('./arcuata/Arcuata-Bold.woff2') format('woff2');
+      src: url('./assets/fonts/Arcuata-Bold.woff2') format('woff2');
       font-weight: 700;
       font-style: normal;
     }
@@ -51,7 +51,7 @@ class TestimonialCard extends HTMLElement {
           <div style="font-size:13px;color:#919dab;margin-top:3px;">${person}</div>
         </div>
       </div>
-      <p style="font-family:'Arcuata',Georgia,serif;font-size:16px;color:#ffffff;line-height:1.65;margin:0;">${quote}</p>
+      <p style="font-family:'Arcuata',Georgia,serif;font-size:16px;color:#ffffff;line-height:1.5;margin:0;letter-spacing:-0.3px;">${quote}</p>
     `;
   }
 }
@@ -66,7 +66,7 @@ class TestimonialStrip extends HTMLElement {
     this.style.cssText = `
       display: block;
       position: relative;
-      padding: 0 32px;
+      padding: 0 50px;
       box-sizing: border-box;
     `;
 
@@ -81,17 +81,17 @@ class TestimonialStrip extends HTMLElement {
           position: absolute;
           top: 0;
           bottom: 0;
-          width: 52px;
+          width: 80px;
           z-index: 5;
           pointer-events: none;
         }
         testimonial-strip::before {
           left: 0;
-          background: linear-gradient(to right, #121620 0%, transparent 100%);
+          background: linear-gradient(to right, #21232f 0%, transparent 100%);
         }
         testimonial-strip::after {
           right: 0;
-          background: linear-gradient(to left, #121620 0%, transparent 100%);
+          background: linear-gradient(to left, #21232f 0%, transparent 100%);
         }
       `;
       document.head.appendChild(style);
@@ -110,7 +110,9 @@ class TestimonialStrip extends HTMLElement {
       -webkit-overflow-scrolling: touch;
       cursor: grab;
     `;
-    cards.forEach((card) => { track.appendChild(card); });
+    cards.forEach((card) => {
+      track.appendChild(card);
+    });
     this.appendChild(track);
 
     // Hide webkit scrollbar
@@ -155,7 +157,8 @@ class TestimonialStrip extends HTMLElement {
     next.style.cssText = `${btnStyle}right: 0;`;
 
     const scrollBy = (dir) => {
-      const cardWidth = track.querySelector("testimonial-card")?.offsetWidth + 16 || 316;
+      const cardWidth =
+        track.querySelector("testimonial-card")?.offsetWidth + 16 || 316;
       track.scrollBy({ left: dir * cardWidth, behavior: "smooth" });
     };
 
@@ -166,7 +169,9 @@ class TestimonialStrip extends HTMLElement {
     this.appendChild(next);
 
     // Drag to scroll
-    let isDown = false, startX, scrollLeft;
+    let isDown = false,
+      startX,
+      scrollLeft;
 
     track.addEventListener("mousedown", (e) => {
       isDown = true;
@@ -174,8 +179,14 @@ class TestimonialStrip extends HTMLElement {
       startX = e.pageX - track.offsetLeft;
       scrollLeft = track.scrollLeft;
     });
-    track.addEventListener("mouseleave", () => { isDown = false; track.classList.remove("dragging"); });
-    track.addEventListener("mouseup", () => { isDown = false; track.classList.remove("dragging"); });
+    track.addEventListener("mouseleave", () => {
+      isDown = false;
+      track.classList.remove("dragging");
+    });
+    track.addEventListener("mouseup", () => {
+      isDown = false;
+      track.classList.remove("dragging");
+    });
     track.addEventListener("mousemove", (e) => {
       if (!isDown) return;
       e.preventDefault();
