@@ -1,24 +1,3 @@
-// Inject Arcuata font once
-if (!document.querySelector("style[data-arcuata]")) {
-  const style = document.createElement("style");
-  style.dataset.arcuata = "1";
-  style.textContent = `
-    @font-face {
-      font-family: 'Arcuata';
-      src: url('../../assets/fonts/Arcuata-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Arcuata';
-      src: url('../../assets/fonts/Arcuata-Bold.woff2') format('woff2');
-      font-weight: 700;
-      font-style: normal;
-    }
-  `;
-  document.head.appendChild(style);
-}
-
 class TestimonialCard extends HTMLElement {
   connectedCallback() {
     const avatar = this.getAttribute("avatar") || "";
@@ -30,10 +9,10 @@ class TestimonialCard extends HTMLElement {
       ? `<img src="${avatar}" alt="${org}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;">`
       : `<div style="width:48px;height:48px;border-radius:50%;background:#3c424f;flex-shrink:0;"></div>`;
 
+    this.classList.add("t-card");
     this.style.cssText = `
       display: flex;
       flex-direction: column;
-      flex: 0 0 300px;
       scroll-snap-align: start;
       background: rgba(32, 35, 48, 0.75);
       border: 2px solid #e5ae3c;
@@ -51,7 +30,7 @@ class TestimonialCard extends HTMLElement {
           <div style="font-size:13px;color:#919dab;margin-top:3px;">${person}</div>
         </div>
       </div>
-      <p style="font-family:'Arcuata',Georgia,serif;font-size:16px;color:#ffffff;line-height:1.5;margin:0;letter-spacing:-0.3px;">${quote}</p>
+      <p style="font-family:'Arcuata',Georgia,serif;font-size:17px;color:#ffffff;line-height:1.5;margin:0;letter-spacing:-0.3px;">${quote}</p>
     `;
   }
 }
@@ -79,7 +58,7 @@ class TestimonialStrip extends HTMLElement {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
-      padding: 8px 0 16px 60px;
+      padding: 8px 0 16px 16px;
       -webkit-overflow-scrolling: touch;
       cursor: grab;
     `;
@@ -95,6 +74,11 @@ class TestimonialStrip extends HTMLElement {
       style.textContent = `
         [data-track]::-webkit-scrollbar { display: none; }
         [data-track].dragging { cursor: grabbing; user-select: none; }
+        .t-card { flex: 0 0 254px; }
+        @media (min-width: 640px) {
+          .t-card { flex: 0 0 300px; }
+          [data-track] { padding-left: 60px; }
+        }
       `;
       document.head.appendChild(style);
     }

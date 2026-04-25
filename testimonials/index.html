@@ -5,7 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <base href="/testimonials/" />
     <title>Testimonials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gray-850": "#1a2030",
+            },
+          },
+        },
+      };
+    </script>
     <link rel="stylesheet" href="./shared-files/shared.css" />
 
     <link
@@ -99,7 +112,7 @@
     <div class="bg-gray-850 text-gray-200 pt-12">
       <div class="mx-auto max-w-4xl px-8 py-16">
         <div class="mb-10 text-center">
-          <h2 class="mb-3 text-2xl font-semibold text-gray-100 lg:text-5xl">
+          <h2 class="mb-3 text-3xl font-semibold text-gray-100 lg:text-5xl">
             Customer Success Stories
           </h2>
           <p class="mx-auto max-w-2xl text-gray-400">
@@ -114,7 +127,9 @@
             <div class="mb-3 uppercase tracking-widest" style="color: #e5ae3c">
               Type 1 — Testimonial
             </div>
-            <h3 class="mb-2 font-semibold text-gray-100">Attributed quote</h3>
+            <h3 class="mb-2 text-xl font-semibold text-gray-100">
+              Attributed quote
+            </h3>
             <p class="text-gray-400">
               A direct quote from an individual at an organization. Attribution
               can be a named person, a role, or a generic spokesperson when
@@ -126,7 +141,7 @@
             <div class="mb-3 uppercase tracking-widest" style="color: #e5ae3c">
               Type 2 — Micro Case Study
             </div>
-            <h3 class="mb-2 font-semibold text-gray-100">
+            <h3 class="mb-2 text-xl font-semibold text-gray-100">
               Org-level narrative
             </h3>
             <p class="text-gray-400">
@@ -140,7 +155,9 @@
             <div class="mb-3 uppercase tracking-widest" style="color: #e5ae3c">
               Type 3 — Combined
             </div>
-            <h3 class="mb-2 font-semibold text-gray-100">Quote + context</h3>
+            <h3 class="mb-2 text-xl font-semibold text-gray-100">
+              Quote + context
+            </h3>
             <p class="text-gray-400">
               A brief quote paired with explanatory prose from Boot.dev. Useful
               when only a few words were provided — the added context fills in
@@ -171,13 +188,22 @@
 
       <div class="flex flex-col items-center text-center mt-12">
         <h2
-          class="max-w-xs text-xl leading-none text-gray-100 lg:max-w-2xl lg:text-4xl pt-8"
+          class="max-w-xs text-3xl leading-16 text-balance text-gray-100 lg:max-w-2xl lg:text-4xl pt-8 mb-0"
         >
           What Companies Have Told Us
         </h2>
       </div>
       <script type="module" src="./testimonial-strip.js"></script>
-      <div style="padding: 40px 24px; max-width: 1600px; margin: 0 auto">
+      <div
+        style="
+          padding-top: 26px;
+          padding-bottom: 40px;
+          padding-left: 24px;
+          padding-right: 24px;
+          max-width: 1600px;
+          margin: 0 auto;
+        "
+      >
         <testimonial-strip>
           <testimonial-card
             org="Acme Corp"
@@ -219,12 +245,21 @@
 
       <div class="flex flex-col items-center text-center mt-12">
         <h2
-          class="max-w-xs text-xl leading-none text-gray-100 lg:max-w-2xl lg:text-4xl"
+          class="max-w-xs text-3xl leading-16 text-balance text-gray-100 lg:max-w-2xl lg:text-4xl"
         >
           What Schools Have Told Us
         </h2>
       </div>
-      <div style="padding: 40px 24px 0; max-width: 1600px; margin: 0 auto">
+      <div
+        style="
+          padding-top: 26px;
+          padding-bottom: 40px;
+          padding-left: 24px;
+          padding-right: 24px;
+          max-width: 1600px;
+          margin: 0 auto;
+        "
+      >
         <testimonial-strip style="padding-left: 16px; padding-right: 16px">
           <testimonial-card
             org="Lincoln High School"
