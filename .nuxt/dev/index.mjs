@@ -2033,7 +2033,7 @@ const _3SenySD94S2d83TiNGsixijvHRUz_WoOkPtgoXCoEyc = (function(nitro) {
 
 const rootDir = "/Users/mvellandi/PROJECTS/side/boot/concepts";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[],"viewport":"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"};
 
 const appRootTag = "div";
 

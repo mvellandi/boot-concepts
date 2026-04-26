@@ -1,33 +1,35 @@
 <template>
-  <div class="relative box-border pl-[50px]">
-    <div class="pointer-events-none absolute right-0 top-0 h-full w-15 bg-linear-to-r from-transparent to-[#121620]"></div>
-    <button
-      aria-label="Previous"
-      class="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold"
-      @click="scrollTrack(-1)"
-    >
-      ‹
-    </button>
-
-    <div
-      ref="track"
-      class="track-scroll flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 pl-4 pt-2"
-      :class="isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'"
-      @mousedown="startDrag"
-      @mousemove="onDrag"
-      @mouseup="stopDrag"
-      @mouseleave="stopDrag"
-    >
-      <slot />
+  <div class="px-12.5">
+    <div class="relative box-border xl:px-16">
+      <div class="pointer-events-none absolute right-0 top-0 h-full w-20 bg-linear-to-r from-gray-850/0 to-gray-850"></div>
+      <button
+        aria-label="Previous"
+        class="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold"
+        @click="scrollTrack(-1)"
+      >
+        ‹
+      </button>
+  
+      <div
+        ref="track"
+        class="track-scroll flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 pl-4 pt-2"
+        :class="isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'"
+        @mousedown="startDrag"
+        @mousemove="onDrag"
+        @mouseup="stopDrag"
+        @mouseleave="stopDrag"
+      >
+        <slot />
+      </div>
+      <div class="pointer-events-none absolute left-0 top-0 h-full w-20 bg-linear-to-l from-gray-850/0 to-gray-850"></div>
+      <button
+        aria-label="Next"
+        class="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold"
+        @click="scrollTrack(1)"
+      >
+        ›
+      </button>
     </div>
-
-    <button
-      aria-label="Next"
-      class="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold"
-      @click="scrollTrack(1)"
-    >
-      ›
-    </button>
   </div>
 </template>
 
