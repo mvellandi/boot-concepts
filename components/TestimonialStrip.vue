@@ -66,7 +66,11 @@ function stopDrag() {
 }
 
 function scrollTrack(dir: number) {
-  track.value?.scrollBy({ left: dir * scrollDistance.value, behavior: 'smooth' })
+  if (!track.value) return
+  const el = track.value
+  const maxScroll = el.scrollWidth - el.clientWidth
+  const target = Math.max(0, Math.min(maxScroll, el.scrollLeft + dir * scrollDistance.value))
+  el.scrollTo({ left: target, behavior: 'smooth' })
 }
 
 onMounted(() => {
