@@ -1,5 +1,6 @@
 <template>
-  <div class="relative box-border px-[50px]">
+  <div class="relative box-border pl-[50px]">
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-15 bg-linear-to-r from-transparent to-[#121620]"></div>
     <button
       aria-label="Previous"
       class="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold"
@@ -31,12 +32,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const track = ref<HTMLElement | null>(null)
 const isDragging = ref(false)
 const startX = ref(0)
 const scrollLeft = ref(0)
+const scrollDistance = ref(320)
+
+function updateScrollDistance() {
+  if (!track.value || !track.value.firstElementChild) return
+  const card = track.value.firstElementChild as HTMLElement
+  const gap = 16
+  scrollDistance.value = card.offsetWidth + gap
+}
 
 function startDrag(e: MouseEvent) {
   if (!track.value) return
@@ -57,8 +66,17 @@ function stopDrag() {
 }
 
 function scrollTrack(dir: number) {
-  track.value?.scrollBy({ left: dir * 320, behavior: 'smooth' })
+  track.value?.scrollBy({ left: dir * scrollDistance.value, behavior: 'smooth' })
 }
+
+onMounted(() => {
+  updateScrollDistance()
+  window.addEventListener('resize', updateScrollDistance)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScrollDistance)
+})
 </script>
 
 <style scoped>
