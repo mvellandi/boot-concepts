@@ -1,1 +1,1 @@
-export { default } from "file:///Users/mvellandi/PROJECTS/side/boot/concepts/node_modules/.pnpm/@nuxt+vite-builder@3.21.2_lightningcss@1.32.0_magicast@0.5.2_nuxt@3.21.2_@emnapi+core@1_5140d917efba476e49ec5df89c8aed89/node_modules/@nuxt/vite-builder/dist/vite-node-runner.mjs"
+export { default } from "file:///Users/mvellandi/PROJECTS/side/boot/concepts/node_modules/.pnpm/@nuxt+vite-builder@4.4.2_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biomejs+b_1b7791109be8932ecea3b04f931e2aa6/node_modules/@nuxt/vite-builder/dist/vite-node-runner.mjs"

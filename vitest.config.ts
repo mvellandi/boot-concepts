@@ -1,16 +1,16 @@
-import { defineConfig } from 'vitest/config'
+import { URL, fileURLToPath } from 'node:url'
 import vue from '@vitejs/plugin-vue'
-import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '~': fileURLToPath(new URL('.', import.meta.url))
-    }
+      '~': fileURLToPath(new URL('.', import.meta.url)),
+    },
   },
   test: {
     environment: 'happy-dom',
-    globals: true
-  }
+    globals: true,
+  },
 })

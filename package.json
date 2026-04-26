@@ -8,12 +8,17 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
   },
   "dependencies": {
-    "nuxt": "^3.15.0"
+    "nuxt": "^4.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@tailwindcss/vite": "^4.0.0",
     "@vitejs/plugin-vue": "^5.0.0",
     "@vue/test-utils": "^2.4.0",

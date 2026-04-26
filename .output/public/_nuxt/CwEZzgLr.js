@@ -1,0 +1,1 @@
+import{_ as t,o as s,c as r,r as c}from"./C5CpTRLP.js";const o={},n={class:"min-h-screen bg-[#121620] text-gray-200"};function a(e,_){return s(),r("div",n,[c(e.$slots,"default")])}const d=t(o,[["render",a]]);export{d as default};

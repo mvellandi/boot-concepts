@@ -4,7 +4,7 @@ import TestimonialCard from '~/components/TestimonialCard.vue'
 describe('TestimonialCard', () => {
   it('renders org, person, and quote', () => {
     const wrapper = mount(TestimonialCard, {
-      props: { org: 'Acme Corp', person: 'Jane Doe', quote: 'Great product!' }
+      props: { org: 'Acme Corp', person: 'Jane Doe', quote: 'Great product!' },
     })
     expect(wrapper.text()).toContain('Acme Corp')
     expect(wrapper.text()).toContain('Jane Doe')
@@ -13,7 +13,7 @@ describe('TestimonialCard', () => {
 
   it('renders avatar img with correct src and alt when avatar prop is provided', () => {
     const wrapper = mount(TestimonialCard, {
-      props: { org: 'Acme', person: 'Jane', quote: 'Good', avatar: '/avatar.jpg' }
+      props: { org: 'Acme', person: 'Jane', quote: 'Good', avatar: '/avatar.jpg' },
     })
     const img = wrapper.find('img')
     expect(img.exists()).toBe(true)
@@ -23,7 +23,7 @@ describe('TestimonialCard', () => {
 
   it('renders placeholder div and no img when avatar prop is omitted', () => {
     const wrapper = mount(TestimonialCard, {
-      props: { org: 'Acme', person: 'Jane', quote: 'Good' }
+      props: { org: 'Acme', person: 'Jane', quote: 'Good' },
     })
     expect(wrapper.find('img').exists()).toBe(false)
     expect(wrapper.find('[data-testid="avatar-placeholder"]').exists()).toBe(true)

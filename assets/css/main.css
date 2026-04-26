@@ -3,19 +3,19 @@
 @theme {
   --color-gray-850: #1a2030;
   --color-gold: #e5ae3c;
-  --font-arcuata: 'Arcuata', Georgia, serif;
+  --font-arcuata: "Arcuata", Georgia, serif;
 }
 
 @font-face {
-  font-family: 'Arcuata';
-  src: url('/fonts/Arcuata-Regular.woff2') format('woff2');
+  font-family: "Arcuata";
+  src: url("/fonts/Arcuata-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Arcuata';
-  src: url('/fonts/Arcuata-Bold.woff2') format('woff2');
+  font-family: "Arcuata";
+  src: url("/fonts/Arcuata-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }

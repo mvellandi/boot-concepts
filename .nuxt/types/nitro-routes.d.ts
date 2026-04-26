@@ -4,7 +4,7 @@ declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
     '/__nuxt_error': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@3.21.2_db0@0.3.4_ioredis@5.10.1_magicast@0.5.2_nuxt@3.21.2_@emnapi+c_f16c22b1822dca9ed056b52ef8978b74/node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@4.4.2_@babel+core@7.29.0_db0@0.3.4_ioredis@5.10.1_magicast@0.5.2_nux_8879fc23e1bc9cc0bd70cba0df86522e/node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>

@@ -1,9 +1,9 @@
 {
-  "_hash": "Z1ftSDNdtvT-zAThHpaBVeVK6XnCm2008ToxKZxZUvU",
+  "_hash": "gYyftVhQ5THmaRFrZ7trk6sLmdBdsYglZbInSzMfAL8",
   "project": {
     "rootDir": "/Users/mvellandi/PROJECTS/side/boot/concepts"
   },
   "versions": {
-    "nuxt": "3.21.2"
+    "nuxt": "4.4.2"
   }
 }
