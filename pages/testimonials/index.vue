@@ -3,7 +3,7 @@
     <!-- Docs section -->
     <div class="mx-auto max-w-4xl px-8 py-16">
       <div class="mb-10 text-center">
-        <h2 class="mb-3 text-3xl font-semibold text-gray-100 lg:text-5xl">
+        <h2 class="mb-3 text-3xl font-arcuata font-semibold text-gray-100 lg:text-5xl">
           Customer Success Stories
         </h2>
         <p class="mx-auto max-w-2xl text-gray-400">
@@ -42,6 +42,7 @@
       <div class="mt-8 border border-dashed border-gray-600 p-5 text-gray-400">
         <span class="font-medium text-gray-300">On the heading:</span>
         "What X Has Told Us" works when all entries are direct quotes. When the mix includes
+        &quot;What X Has Told Us&quot; works when all entries are direct quotes. When the mix includes
         case studies or anonymous proof, the title would be adjusted.
       </div>
     </div>
@@ -51,7 +52,7 @@
 
     <!-- Companies strip -->
     <div class="flex flex-col items-center text-center mt-12">
-      <h2 class="max-w-xs text-balance text-3xl leading-16 text-gray-100 lg:max-w-2xl lg:text-4xl pt-8 mb-0">
+      <h2 class="max-w-xs text-balance font-arcuata text-3xl leading-tight text-gray-100 lg:max-w-2xl lg:text-4xl pt-8 mb-0">
         What Companies Have Told Us
       </h2>
     </div>
@@ -90,12 +91,12 @@
 
     <!-- Schools strip -->
     <div class="flex flex-col items-center text-center mt-12">
-      <h2 class="max-w-xs text-balance text-3xl leading-16 text-gray-100 lg:max-w-2xl lg:text-4xl">
+      <h2 class="max-w-xs text-balance font-arcuata text-3xl leading-tight text-gray-100 lg:max-w-2xl lg:text-4xl">
         What Schools Have Told Us
       </h2>
     </div>
     <div class="mx-auto max-w-[1600px] px-6 pt-[26px] pb-10">
-      <TestimonialStrip class="px-4">
+      <TestimonialStrip>
         <TestimonialCard
           org="Lincoln High School"
           person="Sarah Chen, CS Instructor"
@@ -130,3 +131,7 @@
     <div class="h-24"></div>
   </div>
 </template>
+
+<script setup lang="ts">
+// Nuxt 3 auto-imports TestimonialCard and TestimonialStrip
+</script>

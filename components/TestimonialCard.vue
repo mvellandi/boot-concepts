@@ -19,7 +19,7 @@
         <div class="mt-[3px] text-[13px] text-[#919dab]">{{ person }}</div>
       </div>
     </div>
-    <p class="m-0 font-arcuata text-[17px] leading-[1.5] tracking-[-0.3px] text-white">
+    <p class="m-0 text-[16px] leading-[1.5] tracking-[0.3px] text-slate-200">
       {{ quote }}
     </p>
   </div>
