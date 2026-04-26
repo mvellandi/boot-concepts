@@ -10,6 +10,11 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover',
     },
   },
+  nitro: {
+    prerender: {
+      routes: ['/testimonials'],
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
