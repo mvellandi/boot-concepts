@@ -1,10 +1,9 @@
 <template>
-  <div class="px-12.5">
-    <div class="relative box-border xl:px-16">
-      <div class="pointer-events-none absolute right-0 top-0 h-full w-20 bg-linear-to-r from-gray-850/0 to-gray-850"></div>
+    <div class="relative box-border px-12 xl:px-16">
+      <div class="pointer-events-none absolute right-0 top-0 h-full w-10 bg-linear-to-r from-gray-850/0 to-gray-850"></div>
       <button
         aria-label="Previous"
-        class="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold"
+        class="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold xl:left-4"
         @click="scrollTrack(-1)"
       >
         ‹
@@ -24,13 +23,12 @@
       <div class="pointer-events-none absolute left-0 top-0 h-full w-20 bg-linear-to-l from-gray-850/0 to-gray-850"></div>
       <button
         aria-label="Next"
-        class="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-[rgba(32,35,48,0.85)] text-lg text-gold"
+        class="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-[60%] cursor-pointer items-center justify-center border border-gold bg-linear-to-r from-gray-850/0 to-gray-850 text-lg text-gold xl:right-4"
         @click="scrollTrack(1)"
       >
         ›
       </button>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
