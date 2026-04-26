@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   app: {
+    base: '/boot-concepts/',
     head: {
       viewport: 'width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover',
     },
