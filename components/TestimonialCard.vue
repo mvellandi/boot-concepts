@@ -4,23 +4,32 @@
   >
     <div class="flex items-center gap-3">
       <img
-        v-if="avatar"
-        :src="avatar"
+        v-if="image"
+        :src="image"
         :alt="org"
         class="h-12 w-12 shrink-0 rounded-full object-cover"
       />
       <div
         v-else
-        data-testid="avatar-placeholder"
+        data-testid="image-placeholder"
         class="h-12 w-12 shrink-0 rounded-full bg-[#3c424f]"
       ></div>
       <div>
         <div class="text-[15px] font-semibold leading-[1.3] text-white">{{ org }}</div>
-        <div class="mt-[3px] text-[13px] text-[#919dab]">{{ person }}</div>
+        <div v-if="person" class="mt-[3px] text-[13px] text-[#919dab]">{{ person }}</div>
       </div>
     </div>
-    <p class="m-0 text-[16px] leading-[1.5] tracking-[0.3px] text-slate-200">
-      {{ quote }}
+    <p
+      v-if="quote"
+      class="m-0 text-[16px] font-serif italic leading-[1.5] tracking-[0.3px] text-slate-200"
+    >
+      &OpenCurlyDoubleQuote;{{ quote }}&CloseCurlyDoubleQuote;
+    </p>
+    <p
+      v-if="description"
+      class="m-0 text-[14px] leading-[1.5] text-slate-300/80"
+    >
+      {{ description }}
     </p>
   </div>
 </template>
@@ -28,8 +37,9 @@
 <script setup lang="ts">
 defineProps<{
   org: string
-  person: string
-  quote: string
-  avatar?: string
+  person?: string
+  quote?: string
+  description?: string
+  image?: string
 }>()
 </script>

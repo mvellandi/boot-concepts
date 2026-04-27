@@ -6,35 +6,29 @@
         <h2 class="mb-3 text-3xl font-arcuata font-semibold text-white sm:text-4xl lg:text-5xl lg:mb-5">
           Customer Success Stories
         </h2>
-        <p class="mx-auto max-w-2xl text-gray-300 text-balance md:text-xl">
-          Not every organization will offer a quotable testimonial. This section flexes
-          around what's actually available — so there's always something meaningful to show.
+        <p class="mx-auto max-w-2xl text-gray-300 text-balance md:text-xl md:leading-8">
+          While not everyone can offer a great quotable testimonial, "mini cupcakes" can be made with:
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
         <div class="border border-gray-500 bg-gray-800/30 p-6">
           <div class="mb-3 uppercase font-semibold tracking-widest text-gold">Type 1:&nbsp; Testimonial</div>
-          <h3 class="mb-2 text-balance text-xl font-semibold text-gray-50">Attributed quote</h3>
           <p class="text-gray-300">
-            A direct quote from an individual at an organization. Attribution can be a named
+            A direct quote from an individual at an organization. It could be a named
             person, a role, or a generic spokesperson when confidentiality is required.
           </p>
         </div>
         <div class="border border-gray-500 bg-gray-800/30 p-6">
           <div class="mb-3 text-balance uppercase tracking-widest text-gold">Type 2:&nbsp; Case Study</div>
-          <h3 class="mb-2 text-xl font-semibold text-gray-50">Org-level narrative</h3>
           <p class="text-gray-300">
-            A short paragraph describing how an organization uses the platform and what
-            changed. No individual quoted — only an org name and optionally a department byline.
+            A short paragraph about how an organization uses Boot.dev and possible results. No person quoted — only an org name and optionally a department byline.
           </p>
         </div>
         <div class="border border-gray-500 bg-gray-800/30 p-6">
           <div class="mb-3 text-balance uppercase tracking-widest text-gold">Type 3:&nbsp; Combined Use</div>
-          <h3 class="mb-2 text-xl font-semibold text-gray-50">Quote + context</h3>
           <p class="text-gray-300">
-            A brief quote paired with explanatory prose from Boot.dev. Useful when only a
-            few words were provided — the added context fills in what the quote alone can't convey.
+            A brief quote paired with descriptive text. Useful when only a few words were provided, with the added context filling in the blanks.
           </p>
         </div>
       </div>
@@ -69,7 +63,8 @@
         <TestimonialCard
           org="Pinnacle Software"
           person="Dana Kim, L&D Lead"
-          quote="We've tried video courses and bootcamps. Boot.dev is the first platform where completion rates didn't fall off a cliff after week one."
+          quote="Completion rates didn't fall off a cliff after week one."
+          description="After trying video courses and bootcamps, Pinnacle adopted Boot.dev across its L&D program and saw retention hold steady through the full curriculum."
         />
         <TestimonialCard
           org="CloudOps Inc."
@@ -78,13 +73,13 @@
         />
         <TestimonialCard
           org="Midsize SaaS Co."
-          person="Sam Patel, CTO"
-          quote="The ROI was immediate. Within a month of onboarding our IT staff, they were handling tasks that used to require contractor support."
+          person="IT Operations"
+          description="After onboarding their internal IT staff to Boot.dev, the team began handling infrastructure tasks that previously required outside contractors — reducing spend within the first month."
         />
         <TestimonialCard
           org="Greenfield Ventures"
-          person="Taylor Brooks, Head of Engineering"
-          quote="Cost-effective and self-paced. Our engineers fit it around sprint cycles without any scheduling headaches."
+          person="Engineering Department"
+          description="Greenfield's engineers use Boot.dev as a self-paced upskilling track that fits around sprint cycles, making it possible to grow technical depth without disrupting delivery."
         />
       </TestimonialStrip>
     </div>
@@ -107,13 +102,14 @@
         />
         <TestimonialCard
           org="Code for Teens Summer Camp"
-          person="James Park, Lead Instructor"
-          quote="Students who come in with zero experience are writing real programs by week two. The structured path removes all the guesswork for instructors."
+          person="Instructional Staff"
+          description="Campers arrive with zero programming experience and are writing real programs by week two. The structured curriculum lets instructors focus on coaching rather than building lesson plans from scratch."
         />
         <TestimonialCard
           org="Westside Academy"
           person="David Kim, AP CS Teacher"
-          quote="I've tried a dozen platforms. Boot.dev is the only one where students actually ask to do more lessons outside of class time."
+          quote="Students actually ask to do more lessons outside of class."
+          description="After evaluating a dozen platforms for the AP CS program, Westside settled on Boot.dev as the one that consistently held student attention beyond required coursework."
         />
         <TestimonialCard
           org="Girls Who Code Chapter"
@@ -122,8 +118,8 @@
         />
         <TestimonialCard
           org="TechBridge After-School Program"
-          person="Maria Torres, Curriculum Lead"
-          quote="Our students come from under-resourced schools. Boot.dev's self-paced model lets each kid move at their own speed without anyone falling behind."
+          person="Curriculum Team"
+          description="Serving students from under-resourced schools, TechBridge uses Boot.dev's self-paced model so each learner can progress at their own speed without holding back the rest of the cohort."
         />
       </TestimonialStrip>
     </div>
