@@ -57,28 +57,28 @@
       <TestimonialStrip>
         <TestimonialCard
           org="Acme Corp"
-          person="Jordan Lee, Engineering Manager"
+          subhead="Jordan Lee, Engineering Manager"
           quote="Our junior devs went from shaky fundamentals to confidently shipping backend features. The hands-on format is what made the difference."
         />
         <TestimonialCard
           org="Pinnacle Software"
-          person="Dana Kim, L&D Lead"
+          subhead="Dana Kim, L&D Lead"
           quote="Completion rates didn't fall off a cliff after week one."
           description="After trying video courses and bootcamps, Pinnacle adopted Boot.dev across its L&D program and saw retention hold steady through the full curriculum."
         />
         <TestimonialCard
           org="CloudOps Inc."
-          person="Alex Rivera, DevOps Lead"
+          subhead="Alex Rivera, DevOps Lead"
           quote="The infrastructure curriculum is genuinely current — Kubernetes, Docker, CI/CD. Our team isn't learning yesterday's stack."
         />
         <TestimonialCard
           org="Midsize SaaS Co."
-          person="IT Operations"
+          subhead="Amsterdam, The Netherlands"
           description="After onboarding their internal IT staff to Boot.dev, the team began handling infrastructure tasks that previously required outside contractors — reducing spend within the first month."
         />
         <TestimonialCard
           org="Greenfield Ventures"
-          person="Engineering Department"
+          subhead="Savannah, USA"
           description="Greenfield's engineers use Boot.dev as a self-paced upskilling track that fits around sprint cycles, making it possible to grow technical depth without disrupting delivery."
         />
       </TestimonialStrip>
@@ -97,28 +97,28 @@
       <TestimonialStrip>
         <TestimonialCard
           org="Lincoln High School"
-          person="Sarah Chen, CS Instructor"
+          subhead="Sarah Chen, CS Instructor"
           quote="Boot.dev completely transformed how my students engage with programming. The gamified approach keeps them motivated in a way that textbooks never could."
         />
         <TestimonialCard
           org="Code for Teens Summer Camp"
-          person="Instructional Staff"
+          subhead="Dublin, Ireland"
           description="Campers arrive with zero programming experience and are writing real programs by week two. The structured curriculum lets instructors focus on coaching rather than building lesson plans from scratch."
         />
         <TestimonialCard
           org="Westside Academy"
-          person="David Kim, AP CS Teacher"
+          subhead="David Kim, AP CS Teacher"
           quote="Students actually ask to do more lessons outside of class."
           description="After evaluating a dozen platforms for the AP CS program, Westside settled on Boot.dev as the one that consistently held student attention beyond required coursework."
         />
         <TestimonialCard
           org="Girls Who Code Chapter"
-          person="Priya Nair, Program Director"
+          subhead="Priya Nair, Program Director"
           quote="The browser-based environment is a game changer. No setup, no configuration — students open a laptop and start coding immediately."
         />
         <TestimonialCard
           org="TechBridge After-School Program"
-          person="Curriculum Team"
+          subhead="Tacoma, USA"
           description="Serving students from under-resourced schools, TechBridge uses Boot.dev's self-paced model so each learner can progress at their own speed without holding back the rest of the cohort."
         />
       </TestimonialStrip>

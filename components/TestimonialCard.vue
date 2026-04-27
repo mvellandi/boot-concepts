@@ -16,7 +16,7 @@
       ></div>
       <div>
         <div class="text-[15px] font-semibold leading-[1.3] text-white">{{ org }}</div>
-        <div v-if="person" class="mt-[3px] text-[13px] text-[#919dab]">{{ person }}</div>
+        <div v-if="subhead" class="mt-[3px] text-[13px] text-[#919dab]">{{ subhead }}</div>
       </div>
     </div>
     <p
@@ -37,7 +37,7 @@
 <script setup lang="ts">
 defineProps<{
   org: string
-  person?: string
+  subhead?: string
   quote?: string
   description?: string
   image?: string
