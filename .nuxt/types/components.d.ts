@@ -14,6 +14,8 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
+  NavLink: typeof import("../../components/NavLink.vue")['default']
+  NavPlaceholder: typeof import("../../components/NavPlaceholder.vue")['default']
   TestimonialCard: typeof import("../../components/TestimonialCard.vue")['default']
   TestimonialStrip: typeof import("../../components/TestimonialStrip.vue")['default']
   NuxtWelcome: typeof import("../../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -40,6 +42,8 @@ interface _GlobalComponents {
   Html: typeof import("../../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/head/runtime/components")['Html']
   Body: typeof import("../../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/head/runtime/components")['Body']
   NuxtIsland: typeof import("../../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/app/components/nuxt-island")['default']
+  LazyNavLink: LazyComponent<typeof import("../../components/NavLink.vue")['default']>
+  LazyNavPlaceholder: LazyComponent<typeof import("../../components/NavPlaceholder.vue")['default']>
   LazyTestimonialCard: LazyComponent<typeof import("../../components/TestimonialCard.vue")['default']>
   LazyTestimonialStrip: LazyComponent<typeof import("../../components/TestimonialStrip.vue")['default']>
   LazyNuxtWelcome: LazyComponent<typeof import("../../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/app/components/welcome.vue")['default']>

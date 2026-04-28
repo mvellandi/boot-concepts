@@ -14,6 +14,8 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 
+export const NavLink: typeof import("../components/NavLink.vue")['default']
+export const NavPlaceholder: typeof import("../components/NavPlaceholder.vue")['default']
 export const TestimonialCard: typeof import("../components/TestimonialCard.vue")['default']
 export const TestimonialStrip: typeof import("../components/TestimonialStrip.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -40,6 +42,8 @@ export const Head: typeof import("../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7
 export const Html: typeof import("../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/app/components/nuxt-island")['default']
+export const LazyNavLink: LazyComponent<typeof import("../components/NavLink.vue")['default']>
+export const LazyNavPlaceholder: LazyComponent<typeof import("../components/NavPlaceholder.vue")['default']>
 export const LazyTestimonialCard: LazyComponent<typeof import("../components/TestimonialCard.vue")['default']>
 export const LazyTestimonialStrip: LazyComponent<typeof import("../components/TestimonialStrip.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/.pnpm/nuxt@4.4.2_@babel+core@7.29.0_@babel+plugin-syntax-jsx@7.28.6_@babel+core@7.29.0__@biom_9392a5008eaf9df134d6bd4b86acec35/node_modules/nuxt/dist/app/components/welcome.vue")['default']>

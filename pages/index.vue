@@ -1,24 +1,15 @@
 <template>
-  <div class="flex min-h-screen flex-col items-center justify-center">
-    <div class="flex flex-col items-center">
-      <h1 class="mb-4 text-5xl font-thin tracking-tight text-gray-100 px-3">
+  <div class="flex min-h-screen flex-col justify-center">
+    <div class="flex flex-col items-left px-8 md:pl-24 xl:pl-64 2xl:pl-96">
+      <h1 class="mb-4 text-5xl font-thin tracking-tight text-gray-100">
         Audience Engagement Concepts
       </h1>
       <h2 class="mb-12 text-2xl font-light tracking-wide text-gray-100">
-        for Boot.dev by <a href="http://vellandi.net" class="text-amber-400/90">Mario Vellandi</a>
+        for Boot.dev by <a href="http://vellandi.net" class="text-gray-400/90 underline underline-offset-4">Mario Vellandi</a>
       </h2>
-      <nav class="flex flex-col justify-center items-center gap-8 w-full max-w-[300px]">
-        <NuxtLink
-          to="/testimonials"
-          class="w-full text-center border border-gray-600 bg-gray-800 px-6 py-3 text-sm text-gray-200 transition-colors hover:bg-gray-700 hover:text-white"
-        >
-          Customer Success Stories
-        </NuxtLink>
-        <span
-          class="cursor-default border border-gray-700 bg-gray-800/40 px-6 py-3 text-sm text-gray-500"
-        >
-          More coming soon
-        </span>
+      <nav class="flex flex-col justify-center gap-6 w-full max-w-[300px] md:gap-8">
+        <NavLink to="/testimonials">Customer Success Stories</NavLink>
+        <NavPlaceholder>More coming soon</NavPlaceholder>
       </nav>
     </div>
   </div>
