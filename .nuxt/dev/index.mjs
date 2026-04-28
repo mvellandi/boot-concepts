@@ -3214,4 +3214,3 @@ const renderer = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: handler
 }, Symbol.toStringTag, { value: 'Module' }));
-//# sourceMappingURL=index.mjs.map
